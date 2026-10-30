@@ -6,7 +6,6 @@ Single-page site for Monster Truck Repair, 196 US-206, Hillsborough Township, NJ
 - `assets/` – official logo, favicons, gallery photos (WebP)
 
 ## Before going fully live
-- **Hours** – replace `[PLACEHOLDER – shop hours]` in `index.html`.
 - **Quote form** – create a form at formspree.io and replace `FORMSPREE_ID` in the form `action`. Until then the form opens the visitor's email app addressed to monstertruckrepair1@gmail.com.
 
 ## Hosting
