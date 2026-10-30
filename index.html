@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monster Truck Repair | Heavy-Duty Truck Repair in Hillsborough, NJ</title>
+  <meta name="description" content="Heavy-duty truck repair in Hillsborough Township, NJ. PM service, brakes, turbo, radiator, clutch, transmission, kingpins and more. Clear labor-only prices. Call 732-832-6776.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://aliuppal.github.io/Monster-Truck-Repair/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Monster Truck Repair | Heavy-Duty Truck Repair in Hillsborough, NJ">
+  <meta property="og:description" content="Heavy-duty truck repair with clear labor-only prices. 196 US-206, Hillsborough Township, NJ. Call 732-832-6776.">
+  <meta property="og:url" content="https://aliuppal.github.io/Monster-Truck-Repair/">
+  <meta property="og:image" content="https://aliuppal.github.io/Monster-Truck-Repair/assets/logo.png">
+  <meta property="og:image:alt" content="Monster Truck Repair logo">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,800;1,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/gallery/belt-tensioner.webp" fetchpriority="high">
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#2ddf00',      // site heading/link green (sampled from Google Site CSS)
+            lime: '#8dd230',       // "MONSTER" letters in logo.png
+            panel: '#1a1a1a',
+            line: '#2e2e2e'
+          },
+          fontFamily: {
+            display: ['Montserrat', 'Arial', 'sans-serif'],
+            sans: ['Roboto', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base styles live outside Tailwind so the page paints correctly before the CDN runs */
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: #000; }
+    body { margin: 0; background: #000; color: #fff; font-family: Roboto, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: Montserrat, Arial, sans-serif; font-style: italic; font-weight: 800; }
+    :focus-visible { outline: 3px solid #2ddf00; outline-offset: 3px; border-radius: 4px; }
+    .kicker { font-family: Montserrat, Arial, sans-serif; font-weight: 600; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: #2ddf00; }
+
+    /* Card hover: hairline brand outline on a pseudo-element, only opacity animates */
+    .card { position: relative; }
+    .card::after { content: ""; position: absolute; inset: -1px; border-radius: inherit; border: 1px solid #2ddf00; opacity: 0; transition: opacity 200ms ease; pointer-events: none; }
+    .card:hover::after, .card:focus-within::after { opacity: 1; }
+
+    /* Buttons: transform + opacity only */
+    .btn { transition: transform 150ms ease, opacity 150ms ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0) scale(.98); }
+
+    /* Mobile menu: grid 0fr -> 1fr, no height measuring */
+    .menu-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 250ms ease; }
+    .menu-wrap.open { grid-template-rows: 1fr; }
+    .menu-wrap > div { overflow: hidden; min-height: 0; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 500ms ease, transform 500ms cubic-bezier(.2,0,0,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Lightbox */
+    dialog.lightbox { padding: 0; border: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+    dialog.lightbox::backdrop { background: rgba(0,0,0,.92); }
+    dialog.lightbox[open] .lb-img { animation: lb-in 220ms cubic-bezier(.2,0,0,1); }
+    @keyframes lb-in { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+
+    /* Price table -> stacked cards under 768px, so nothing scrolls sideways */
+    @media (max-width: 767px) {
+      .price-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .price-table, .price-table tbody, .price-table tr, .price-table td, .price-table th { display: block; width: 100%; }
+      .price-table tr { background: #1a1a1a; border: 1px solid #2e2e2e; border-radius: 16px; padding: 14px 16px; margin-bottom: 10px; }
+      .price-table th[scope="row"] { padding: 0 0 4px; border: 0; }
+      .price-table td { padding: 0; border: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Monster Truck Repair",
+    "image": "https://aliuppal.github.io/Monster-Truck-Repair/assets/logo.png",
+    "logo": "https://aliuppal.github.io/Monster-Truck-Repair/assets/logo.png",
+    "url": "https://aliuppal.github.io/Monster-Truck-Repair/",
+    "telephone": "+1-732-832-6776",
+    "email": "monstertruckrepair1@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "196 US-206",
+      "addressLocality": "Hillsborough Township",
+      "addressRegion": "NJ",
+      "postalCode": "08844",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 40.531261, "longitude": -74.62397 },
+    "sameAs": ["https://www.instagram.com/monstertruckrepairnj/"]
+  }
+  </script>
+</head>
+<body class="bg-black text-white font-sans">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-brand focus:text-black focus:px-4 focus:py-2 focus:rounded-full font-bold">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-panel/95 backdrop-blur border-b border-line">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4">
+      <a href="#top" class="shrink-0" aria-label="Monster Truck Repair home">
+        <img src="assets/logo.png" alt="Monster Truck Repair" width="262" height="72" class="h-11 md:h-14 w-auto">
+      </a>
+      <nav aria-label="Main" class="hidden md:flex items-center gap-5 lg:gap-8">
+        <a href="#services" class="text-sm font-medium text-white/85 hover:text-brand transition-colors">Services</a>
+        <a href="#prices" class="text-sm font-medium text-white/85 hover:text-brand transition-colors">Prices</a>
+        <a href="#location" class="text-sm font-medium text-white/85 hover:text-brand transition-colors">Location</a>
+        <a href="#contact" class="text-sm font-medium text-white/85 hover:text-brand transition-colors">Contact</a>
+        <a href="tel:+17328326776" class="btn inline-flex items-center gap-2 bg-brand text-black font-bold text-sm px-5 py-3 rounded-full whitespace-nowrap">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call<span class="hidden lg:inline">732-832-6776</span>
+        </a>
+      </nav>
+      <button id="menuBtn" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-line text-white" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path id="menuIcon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="menu-wrap md:hidden">
+      <div>
+        <nav aria-label="Mobile" class="px-4 pb-5 pt-1 flex flex-col">
+          <a href="#services" class="py-3 border-b border-line text-base font-medium">Services</a>
+          <a href="#prices" class="py-3 border-b border-line text-base font-medium">Prices</a>
+          <a href="#location" class="py-3 border-b border-line text-base font-medium">Location</a>
+          <a href="#contact" class="py-3 text-base font-medium">Contact</a>
+          <a href="tel:+17328326776" class="btn mt-3 text-center bg-brand text-black font-bold px-5 py-3 rounded-full">Call 732-832-6776</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="top" class="relative isolate overflow-hidden min-h-[78vh] md:min-h-[80vh] flex items-end md:items-center">
+      <img src="assets/gallery/belt-tensioner.webp" alt="Heavy-duty truck in the Monster Truck Repair shop after a belt and tensioner replacement" width="850" height="699" fetchpriority="high" decoding="async" class="absolute inset-0 -z-10 w-full h-full object-cover object-[center_30%]">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black from-35% via-black/80 to-black/40 md:bg-gradient-to-r md:from-0% md:from-black md:via-black/80 md:to-black/30" aria-hidden="true"></div>
+      <div class="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-black from-50% to-transparent" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto w-full px-4 md:px-8 py-16 md:py-24">
+        <p class="kicker mb-4">Hillsborough Township, NJ</p>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl leading-[1.02] max-w-3xl">
+          Heavy-Duty Truck Repair in <span class="text-brand">Hillsborough, NJ</span>
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-white/85 max-w-xl">Brakes, engine, turbo, drivetrain, suspension and PM service for semi trucks. Clear labor-only prices, posted up front.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="tel:+17328326776" class="btn inline-flex justify-center items-center gap-2 bg-brand text-black font-bold text-base px-7 py-4 rounded-full">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="#prices" class="btn inline-flex justify-center items-center bg-transparent border border-white/70 text-white font-bold text-base px-7 py-4 rounded-full hover:border-brand hover:text-brand">See Prices</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 md:py-28 border-t border-line">
+      <div class="max-w-6xl mx-auto px-4 md:px-8">
+        <p class="kicker mb-3">What we fix</p>
+        <h2 class="text-3xl md:text-5xl">Services</h2>
+        <p class="mt-4 text-white/75 max-w-2xl">Every job below is on our posted price sheet. Labor only, parts quoted separately.</p>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="card reveal bg-panel border border-line rounded-[20px] p-6 md:p-7">
+            <svg class="w-9 h-9 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3 class="mt-5 text-xl">PM Service</h3>
+            <ul class="mt-3 space-y-1.5 text-white/80 text-[15px]">
+              <li>PM service (oil change)</li>
+            </ul>
+          </article>
+
+          <article class="card reveal bg-panel border border-line rounded-[20px] p-6 md:p-7">
+            <svg class="w-9 h-9 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <h3 class="mt-5 text-xl">Brakes</h3>
+            <ul class="mt-3 space-y-1.5 text-white/80 text-[15px]">
+              <li>Brake shoes and drums</li>
+              <li>Disc brake pads</li>
+              <li>Disc brake rotors</li>
+              <li>Brake chambers (drum brakes)</li>
+            </ul>
+          </article>
+
+          <article class="card reveal bg-panel border border-line rounded-[20px] p-6 md:p-7">
+            <svg class="w-9 h-9 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+            <h3 class="mt-5 text-xl">Engine &amp; Turbo</h3>
+            <ul class="mt-3 space-y-1.5 text-white/80 text-[15px]">
+              <li>Engine valve adjustment</li>
+              <li>Turbocharger</li>
+              <li>Radiator</li>
+              <li>Oil pan gasket</li>
+            </ul>
+          </article>
+
+          <article class="card reveal bg-panel border border-line rounded-[20px] p-6 md:p-7">
+            <svg class="w-9 h-9 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3 class="mt-5 text-xl">Drivetrain &amp; Transmission</h3>
+            <ul class="mt-3 space-y-1.5 text-white/80 text-[15px]">
+              <li>Transmission replacement</li>
+              <li>Clutch replacement</li>
+              <li>Driveshaft center bearing</li>
+              <li>Differential pinion seal</li>
+              <li>Wheel hub oil seal</li>
+            </ul>
+          </article>
+
+          <article class="card reveal bg-panel border border-line rounded-[20px] p-6 md:p-7">
+            <svg class="w-9 h-9 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M8 5h8l-8 3.5h8l-8 3.5h8l-8 3.5h8l-8 3.5h8"/></svg>
+            <h3 class="mt-5 text-xl">Suspension &amp; Steering</h3>
+            <ul class="mt-3 space-y-1.5 text-white/80 text-[15px]">
+              <li>Shock absorbers</li>
+              <li>Kingpins</li>
+              <li>Steer axle leaf spring bushings</li>
+              <li>Drive axle leaf spring bushings</li>
+            </ul>
+          </article>
+
+          <a href="tel:+17328326776" class="card reveal group bg-brand text-black rounded-[20px] p-6 md:p-7 flex flex-col justify-between min-h-[200px]">
+            <span class="font-display font-semibold text-xs tracking-[.18em] uppercase">Not on the list?</span>
+            <span>
+              <span class="block font-display italic font-extrabold text-2xl leading-tight">Call us about your truck</span>
+              <span class="block mt-2 font-bold text-lg">732-832-6776 &rarr;</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prices -->
+    <section id="prices" class="py-20 md:py-28 bg-panel/40 border-t border-line">
+      <div class="max-w-4xl mx-auto px-4 md:px-8">
+        <p class="kicker mb-3">Posted up front</p>
+        <h2 class="text-3xl md:text-5xl text-brand">Price Sheet &ndash; Labor Only</h2>
+
+        <div class="reveal mt-10 md:border md:border-line md:rounded-[20px] md:overflow-hidden">
+        <table class="price-table w-full border-collapse text-left">
+          <caption class="sr-only">Labor-only prices for heavy-duty truck repair services</caption>
+          <thead class="bg-panel">
+            <tr>
+              <th scope="col" class="px-6 py-4 font-display font-semibold text-xs tracking-[.18em] uppercase text-white/70 w-3/5">Service</th>
+              <th scope="col" class="px-6 py-4 font-display font-semibold text-xs tracking-[.18em] uppercase text-white/70">Price</th>
+            </tr>
+          </thead>
+          <tbody class="md:[&>tr:nth-child(even)]:bg-panel/50">
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">PM Service (oil change)</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$100</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Brake shoes and drums</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$90/wheel</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Disc brake pads</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$80/wheel</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Disc brake rotor (incl. pad replacement)</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$350/wheel</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Shock absorbers</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$50/each <span class="text-white/75 font-normal">(rear shocks Volvo $70/each)</span></td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Engine valves adjustment</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$450</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Turbocharger</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$500 <span class="text-white/75 font-normal">for most trucks</span></td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Radiator</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$500 <span class="text-white/75 font-normal">for most trucks</span></td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Kingpins</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$800/both</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Steer axle leaf spring bushing</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$150/each</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Drive axles leaf spring bushings</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$150/each</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Oil pan gasket</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$400 <span class="text-white/75 font-normal">for most trucks</span></td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Transmission replacement</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$1000</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Clutch replacement</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$1350</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Wheel hub oil seal</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$200/wheel</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Driveshaft center bearing</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$250</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Differential pinion seal</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$250</td></tr>
+            <tr><th scope="row" class="md:px-6 md:py-4 md:border-t md:border-line font-medium">Brake chamber (drum brakes)</th><td class="md:px-6 md:py-4 md:border-t md:border-line text-brand font-bold">$125/each</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="mt-5 text-white/75 text-sm"><span class="kicker">Note</span>&nbsp; Labor only &mdash; parts quoted separately.</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 md:py-28 border-t border-line">
+      <div class="max-w-6xl mx-auto px-4 md:px-8">
+        <p class="kicker mb-3">From the shop floor</p>
+        <h2 class="text-3xl md:text-5xl">Recent Work</h2>
+        <p class="mt-4 text-white/75">More on Instagram: <a href="https://www.instagram.com/monstertruckrepairnj/" class="text-brand underline underline-offset-4 hover:no-underline" rel="noopener" target="_blank">@monstertruckrepairnj</a></p>
+
+        <!-- Mobile: 2 portraits side by side, then full-width landscapes. md+: 3 portraits, then 2 landscapes. -->
+        <ul class="mt-10 grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4" id="galleryGrid">
+          <li class="reveal md:col-span-2">
+            <button type="button" class="card block w-full overflow-hidden rounded-[20px] border border-line aspect-[3/5]" data-full="assets/gallery/shop-bay.webp" data-w="508" data-h="850">
+              <img src="assets/gallery/shop-bay-sm.webp" srcset="assets/gallery/shop-bay-sm.webp 287w, assets/gallery/shop-bay.webp 508w" sizes="(min-width: 768px) 33vw, 50vw" alt="Shop bay with several white semi trucks in for repair, hoods open" width="508" height="850" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </button>
+          </li>
+          <li class="reveal md:col-span-2">
+            <button type="button" class="card block w-full overflow-hidden rounded-[20px] border border-line aspect-[3/5]" data-full="assets/gallery/dd15-valve-adjustment.webp" data-w="529" data-h="850">
+              <img src="assets/gallery/dd15-valve-adjustment-sm.webp" srcset="assets/gallery/dd15-valve-adjustment-sm.webp 299w, assets/gallery/dd15-valve-adjustment.webp 529w" sizes="(min-width: 768px) 33vw, 50vw" alt="Detroit DD15 engine with valve cover off for a valve adjustment" width="529" height="850" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </button>
+          </li>
+          <li class="reveal col-span-2">
+            <button type="button" class="card block w-full overflow-hidden rounded-[20px] border border-line aspect-[5/4] md:aspect-[3/5]" data-full="assets/gallery/parts-delivery.webp" data-w="504" data-h="828">
+              <img src="assets/gallery/parts-delivery-sm.webp" srcset="assets/gallery/parts-delivery-sm.webp 292w, assets/gallery/parts-delivery.webp 504w" sizes="(min-width: 768px) 33vw, 100vw" alt="Morning parts delivery: tie rod, torque rod, bushings and hardware laid out on the ground" width="504" height="828" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </button>
+          </li>
+          <li class="reveal col-span-2 md:col-span-3">
+            <button type="button" class="card block w-full overflow-hidden rounded-[20px] border border-line aspect-[5/4]" data-full="assets/gallery/oil-pan-gasket.webp" data-w="922" data-h="706">
+              <img src="assets/gallery/oil-pan-gasket-sm.webp" srcset="assets/gallery/oil-pan-gasket-sm.webp 480w, assets/gallery/oil-pan-gasket.webp 922w" sizes="(min-width: 768px) 50vw, 100vw" alt="Oil pan gasket replacement in progress, oil pan removed with the oil pump assembly" width="922" height="706" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </button>
+          </li>
+          <li class="reveal col-span-2 md:col-span-3">
+            <button type="button" class="card block w-full overflow-hidden rounded-[20px] border border-line aspect-[5/4]" data-full="assets/gallery/belt-tensioner.webp" data-w="850" data-h="699">
+              <img src="assets/gallery/belt-tensioner-sm.webp" srcset="assets/gallery/belt-tensioner-sm.webp 480w, assets/gallery/belt-tensioner.webp 850w" sizes="(min-width: 768px) 50vw, 100vw" alt="Semi truck engine bay after a belt and tensioner replacement" width="850" height="699" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+        <div class="w-full h-full flex items-center justify-center p-4 md:p-10" data-close>
+          <img class="lb-img max-w-full max-h-full rounded-[12px] object-contain" alt="">
+        </div>
+        <button type="button" class="absolute top-4 right-4 w-12 h-12 rounded-full bg-panel border border-line text-white text-2xl leading-none" data-close aria-label="Close photo viewer">&times;</button>
+        <button type="button" class="absolute left-3 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-panel border border-line text-white text-xl" data-prev aria-label="Previous photo">&#8249;</button>
+        <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-panel border border-line text-white text-xl" data-next aria-label="Next photo">&#8250;</button>
+      </dialog>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="py-20 md:py-28 bg-panel/40 border-t border-line">
+      <div class="max-w-6xl mx-auto px-4 md:px-8 grid gap-10 md:grid-cols-5 md:items-center">
+        <div class="md:col-span-2">
+          <p class="kicker mb-3">Find us</p>
+          <h2 class="text-3xl md:text-5xl">Location</h2>
+          <address class="not-italic mt-6 text-lg leading-relaxed">
+            196 US-206<br>Hillsborough Township, NJ 08844
+          </address>
+          <dl class="mt-6 space-y-2 text-white/80">
+            <div class="flex gap-3"><dt class="kicker pt-1 w-16 shrink-0">Hours</dt><dd>[PLACEHOLDER &ndash; shop hours]</dd></div>
+            <div class="flex gap-3"><dt class="kicker pt-1 w-16 shrink-0">Phone</dt><dd><a href="tel:+17328326776" class="text-brand hover:underline">732-832-6776</a></dd></div>
+          </dl>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=196+US-206%2C+Hillsborough+Township%2C+NJ+08844" target="_blank" rel="noopener" class="btn mt-8 inline-flex items-center gap-2 bg-brand text-black font-bold px-6 py-3.5 rounded-full">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Get Directions
+          </a>
+        </div>
+        <div class="md:col-span-3 rounded-[20px] overflow-hidden border border-line bg-panel aspect-[4/3] md:aspect-[16/11]">
+          <iframe title="Map showing Monster Truck Repair at 196 US-206, Hillsborough Township, NJ" src="https://maps.google.com/maps?q=196%20US-206%2C%20Hillsborough%20Township%2C%20NJ%2008844&amp;z=16&amp;output=embed" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 md:py-28 border-t border-line">
+      <div class="max-w-6xl mx-auto px-4 md:px-8 grid gap-12 md:grid-cols-2">
+        <div>
+          <p class="kicker mb-3">Get a quote</p>
+          <h2 class="text-3xl md:text-5xl">Contact Us</h2>
+          <p class="mt-5 text-white/80 max-w-md">Tell us about your truck and what&rsquo;s going on. The fastest way to reach us is a phone call.</p>
+          <ul class="mt-8 space-y-4 text-lg">
+            <li><span class="kicker block mb-1">Phone</span><a href="tel:+17328326776" class="text-brand font-bold hover:underline">732-832-6776</a></li>
+            <li><span class="kicker block mb-1">Email</span><a href="mailto:monstertruckrepair1@gmail.com" class="text-brand hover:underline break-all">monstertruckrepair1@gmail.com</a></li>
+            <li><span class="kicker block mb-1">Instagram</span><a href="https://www.instagram.com/monstertruckrepairnj/" target="_blank" rel="noopener" class="text-brand hover:underline">@monstertruckrepairnj</a></li>
+          </ul>
+        </div>
+
+        <!-- Replace FORMSPREE_ID with a real Formspree form ID to submit there; until then the form opens the visitor's email app -->
+        <form id="quoteForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="bg-panel border border-line rounded-[20px] p-6 md:p-8 space-y-5" novalidate>
+          <div>
+            <label for="f-name" class="block text-sm font-medium mb-2">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required class="w-full bg-black border border-white/30 rounded-md px-4 py-3 text-white placeholder-white/50 focus:border-brand focus:outline-none transition-colors">
+          </div>
+          <div>
+            <label for="f-phone" class="block text-sm font-medium mb-2">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required class="w-full bg-black border border-white/30 rounded-md px-4 py-3 text-white placeholder-white/50 focus:border-brand focus:outline-none transition-colors">
+          </div>
+          <div>
+            <label for="f-truck" class="block text-sm font-medium mb-2">Truck make / model</label>
+            <input id="f-truck" name="truck" type="text" placeholder="e.g. Freightliner Cascadia, DD15" class="w-full bg-black border border-white/30 rounded-md px-4 py-3 text-white placeholder-white/50 focus:border-brand focus:outline-none transition-colors">
+          </div>
+          <div>
+            <label for="f-issue" class="block text-sm font-medium mb-2">What&rsquo;s the issue?</label>
+            <textarea id="f-issue" name="issue" rows="4" required class="w-full bg-black border border-white/30 rounded-md px-4 py-3 text-white placeholder-white/50 focus:border-brand focus:outline-none transition-colors"></textarea>
+          </div>
+          <p id="formStatus" class="text-sm min-h-[1.25rem]" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn w-full bg-brand text-black font-bold text-base px-6 py-4 rounded-full">Request a Quote</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-panel border-t border-line pb-24 md:pb-0">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 py-12 grid gap-8 md:grid-cols-3 md:items-center">
+      <img src="assets/logo.png" alt="Monster Truck Repair" width="262" height="72" loading="lazy" class="h-14 w-auto">
+      <address class="not-italic text-white/80 leading-relaxed">
+        196 US-206, Hillsborough Township, NJ 08844<br>
+        <a href="tel:+17328326776" class="text-brand hover:underline">732-832-6776</a>
+      </address>
+      <div class="flex md:justify-end items-center gap-4">
+        <a href="https://www.instagram.com/monstertruckrepairnj/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white/85 hover:text-brand transition-colors" aria-label="Monster Truck Repair on Instagram">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-line">
+      <p class="max-w-6xl mx-auto px-4 md:px-8 py-5 text-sm text-white/60">&copy; <span id="year">2026</span> Monster Truck Repair. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating call button (mobile) -->
+  <a href="tel:+17328326776" class="btn md:hidden fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 bg-brand text-black font-bold px-5 py-4 rounded-full shadow-[0_8px_24px_rgba(0,0,0,.6)]" aria-label="Call Monster Truck Repair at 732-832-6776">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+
+  <script>
+    (function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile menu
+      var btn = document.getElementById('menuBtn');
+      var menu = document.getElementById('mobileMenu');
+      var icon = document.getElementById('menuIcon');
+      function setMenu(open) {
+        menu.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open);
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        icon.setAttribute('d', open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16');
+      }
+      btn.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+
+      // Scroll reveal
+      var items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        items.forEach(function (el) { io.observe(el); });
+      } else {
+        items.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      // Lightbox
+      var dlg = document.getElementById('lightbox');
+      var lbImg = dlg.querySelector('.lb-img');
+      var thumbs = Array.prototype.slice.call(document.querySelectorAll('#galleryGrid button'));
+      var current = 0;
+      function show(i) {
+        current = (i + thumbs.length) % thumbs.length;
+        var t = thumbs[current];
+        lbImg.src = t.dataset.full;
+        lbImg.width = t.dataset.w;
+        lbImg.height = t.dataset.h;
+        lbImg.alt = t.querySelector('img').alt;
+      }
+      thumbs.forEach(function (t, i) {
+        t.setAttribute('aria-label', 'Enlarge photo: ' + t.querySelector('img').alt);
+        t.addEventListener('click', function () { show(i); dlg.showModal(); });
+      });
+      dlg.addEventListener('click', function (e) {
+        if (e.target.closest('[data-prev]')) return show(current - 1);
+        if (e.target.closest('[data-next]')) return show(current + 1);
+        if (e.target.hasAttribute('data-close') || e.target.closest('button[data-close]')) dlg.close();
+      });
+      dlg.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+      dlg.addEventListener('close', function () { thumbs[current].focus(); });
+
+      // Quote form: Formspree when configured, otherwise a pre-filled email
+      var form = document.getElementById('quoteForm');
+      var status = document.getElementById('formStatus');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          status.textContent = 'Please fill in your name, phone and the issue.';
+          status.className = 'text-sm min-h-[1.25rem] text-red-400';
+          form.querySelector(':invalid').focus();
+          return;
+        }
+        var d = new FormData(form);
+        if (form.action.indexOf('FORMSPREE_ID') !== -1) {
+          var body = 'Name: ' + d.get('name') + '\nPhone: ' + d.get('phone') + '\nTruck: ' + d.get('truck') + '\n\nIssue:\n' + d.get('issue');
+          window.location.href = 'mailto:monstertruckrepair1@gmail.com?subject=' +
+            encodeURIComponent('Quote request - ' + (d.get('truck') || 'truck repair')) + '&body=' + encodeURIComponent(body);
+          status.textContent = 'Opening your email app...';
+          status.className = 'text-sm min-h-[1.25rem] text-brand';
+          return;
+        }
+        status.textContent = 'Sending...';
+        status.className = 'text-sm min-h-[1.25rem] text-white/80';
+        fetch(form.action, { method: 'POST', body: d, headers: { Accept: 'application/json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.status);
+            form.reset();
+            status.textContent = 'Thanks! We’ll call you back soon.';
+            status.className = 'text-sm min-h-[1.25rem] text-brand';
+          })
+          .catch(function () {
+            status.textContent = 'Something went wrong. Please call 732-832-6776.';
+            status.className = 'text-sm min-h-[1.25rem] text-red-400';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
