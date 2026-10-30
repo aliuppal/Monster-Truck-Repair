@@ -87,10 +87,24 @@
       .price-table td { padding: 0; border: 0; }
     }
 
+    /* Hero trucks: compositor-only (transform), paused while the hero is off screen */
+    .drive { position: absolute; left: 0; will-change: transform; animation: drive var(--dur) linear var(--delay) infinite; }
+    .drive.rev { animation-name: drive-rev; }
+    .drive.rev svg { transform: scaleX(-1); }
+    .drive .bob { animation: bob 420ms ease-in-out infinite alternate; }
+    .drive .wheel { transform-box: fill-box; transform-origin: center; animation: spin 500ms linear infinite; }
+    .truck-road .road { background: repeating-linear-gradient(90deg, rgba(45,223,0,.35) 0 28px, transparent 28px 56px); }
+    .truck-road.paused .drive, .truck-road.paused .bob, .truck-road.paused .wheel { animation-play-state: paused; }
+    @keyframes drive { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
+    @keyframes drive-rev { from { transform: translateX(100vw); } to { transform: translateX(-100%); } }
+    @keyframes bob { from { transform: translateY(0); } to { transform: translateY(-.6px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; animation: none !important; }
       .reveal { opacity: 1; transform: none; }
+      .truck-road { display: none; }
     }
   </style>
 
@@ -159,7 +173,14 @@
       <img src="assets/gallery/belt-tensioner.webp" alt="Heavy-duty truck in the Monster Truck Repair shop after a belt and tensioner replacement" width="850" height="699" fetchpriority="high" decoding="async" class="absolute inset-0 -z-10 w-full h-full object-cover object-[center_30%]">
       <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black from-35% via-black/80 to-black/40 md:bg-gradient-to-r md:from-0% md:from-black md:via-black/80 md:to-black/30" aria-hidden="true"></div>
       <div class="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-black from-50% to-transparent" aria-hidden="true"></div>
-      <div class="max-w-6xl mx-auto w-full px-4 md:px-8 py-16 md:py-24">
+      <!-- Decorative trucks driving along the bottom of the hero -->
+      <div id="truckRoad" class="truck-road absolute inset-x-0 bottom-4 md:bottom-8 h-[64px] md:h-[100px] -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div class="drive rev text-brand opacity-25 w-20 md:w-28 bottom-[30px] md:bottom-[50px]" style="--dur:34s;--delay:-21s"><svg viewBox="0 0 120 48" class="block w-full h-auto" fill="currentColor"><g class="bob"><rect x="2" y="6" width="70" height="27" rx="2"/><rect x="72" y="28" width="6" height="4"/><path d="M78 33V13h13l10 9h9a4 4 0 0 1 4 4v7z"/><path d="M92 15.5h1l7.5 6.5H92z" fill="#000" fill-opacity=".6"/><rect x="84" y="3" width="3" height="11" rx="1"/><rect x="2" y="33" width="112" height="3"/></g><g class="wheel"><circle cx="13" cy="39" r="6"/><circle cx="13" cy="39" r="2.4" fill="#000"/><path d="M13 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="26" cy="39" r="6"/><circle cx="26" cy="39" r="2.4" fill="#000"/><path d="M26 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="84" cy="39" r="6"/><circle cx="84" cy="39" r="2.4" fill="#000"/><path d="M84 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="97" cy="39" r="6"/><circle cx="97" cy="39" r="2.4" fill="#000"/><path d="M97 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="109" cy="39" r="6"/><circle cx="109" cy="39" r="2.4" fill="#000"/><path d="M109 33.5v3" stroke="#000" stroke-width="1.6"/></g></svg></div>
+        <div class="drive text-brand opacity-50 w-24 md:w-36 bottom-[14px] md:bottom-[24px]" style="--dur:23s;--delay:-5s"><svg viewBox="0 0 120 48" class="block w-full h-auto" fill="currentColor"><g class="bob"><rect x="2" y="6" width="70" height="27" rx="2"/><rect x="72" y="28" width="6" height="4"/><path d="M78 33V13h13l10 9h9a4 4 0 0 1 4 4v7z"/><path d="M92 15.5h1l7.5 6.5H92z" fill="#000" fill-opacity=".6"/><rect x="84" y="3" width="3" height="11" rx="1"/><rect x="2" y="33" width="112" height="3"/></g><g class="wheel"><circle cx="13" cy="39" r="6"/><circle cx="13" cy="39" r="2.4" fill="#000"/><path d="M13 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="26" cy="39" r="6"/><circle cx="26" cy="39" r="2.4" fill="#000"/><path d="M26 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="84" cy="39" r="6"/><circle cx="84" cy="39" r="2.4" fill="#000"/><path d="M84 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="97" cy="39" r="6"/><circle cx="97" cy="39" r="2.4" fill="#000"/><path d="M97 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="109" cy="39" r="6"/><circle cx="109" cy="39" r="2.4" fill="#000"/><path d="M109 33.5v3" stroke="#000" stroke-width="1.6"/></g></svg></div>
+        <div class="drive text-brand opacity-90 w-28 md:w-44 bottom-[3px]" style="--dur:15s;--delay:-10s"><svg viewBox="0 0 120 48" class="block w-full h-auto" fill="currentColor"><g class="bob"><rect x="2" y="6" width="70" height="27" rx="2"/><rect x="72" y="28" width="6" height="4"/><path d="M78 33V13h13l10 9h9a4 4 0 0 1 4 4v7z"/><path d="M92 15.5h1l7.5 6.5H92z" fill="#000" fill-opacity=".6"/><rect x="84" y="3" width="3" height="11" rx="1"/><rect x="2" y="33" width="112" height="3"/></g><g class="wheel"><circle cx="13" cy="39" r="6"/><circle cx="13" cy="39" r="2.4" fill="#000"/><path d="M13 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="26" cy="39" r="6"/><circle cx="26" cy="39" r="2.4" fill="#000"/><path d="M26 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="84" cy="39" r="6"/><circle cx="84" cy="39" r="2.4" fill="#000"/><path d="M84 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="97" cy="39" r="6"/><circle cx="97" cy="39" r="2.4" fill="#000"/><path d="M97 33.5v3" stroke="#000" stroke-width="1.6"/></g><g class="wheel"><circle cx="109" cy="39" r="6"/><circle cx="109" cy="39" r="2.4" fill="#000"/><path d="M109 33.5v3" stroke="#000" stroke-width="1.6"/></g></svg></div>
+        <div class="road absolute inset-x-0 bottom-0 h-[2px]"></div>
+      </div>
+      <div class="max-w-6xl mx-auto w-full px-4 md:px-8 pt-16 pb-28 md:pt-24 md:pb-36">
         <p class="kicker mb-4">Hillsborough Township, NJ</p>
         <h1 class="text-4xl sm:text-5xl md:text-7xl leading-[1.02] max-w-3xl">
           Heavy-Duty Truck Repair in <span class="text-brand">Hillsborough, NJ</span>
@@ -440,6 +461,16 @@
       }
       btn.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
       menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+
+      // Hero trucks: pause off screen; ?t=N freezes them at N seconds for screenshots
+      var road = document.getElementById('truckRoad');
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) { road.classList.toggle('paused', !en[0].isIntersecting); }).observe(road);
+      }
+      var freezeAt = parseFloat(new URLSearchParams(location.search).get('t'));
+      if (!isNaN(freezeAt) && road.getAnimations) {
+        road.getAnimations({ subtree: true }).forEach(function (a) { a.pause(); a.currentTime = freezeAt * 1000; });
+      }
 
       // Scroll reveal
       var items = document.querySelectorAll('.reveal');
